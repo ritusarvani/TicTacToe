@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
+    //3*3 TicTacToe board with 3 rows and 3 columns
     static char[][] board = new char[3][3];
     static Scanner sc = new Scanner(System.in);
 
+    //Player names
     static String player1;
     static String player2;
 
@@ -23,6 +25,7 @@ public class TicTacToe {
         System.out.print("Enter Player 2 name (O): ");
         player2 = sc.nextLine();
 
+        //For playing again
         boolean playAgain = true;
 
         while (playAgain) {
@@ -58,6 +61,7 @@ public class TicTacToe {
                 row = sc.nextInt();
                 col = sc.nextInt();
 
+                //Check if its a valid move
                 if (isValidMove(row, col)) {
                     board[row][col] = currentSymbol;
                     break;
@@ -66,12 +70,14 @@ public class TicTacToe {
                 }
             }
 
+            //Checking winner
             if (checkWinner(currentSymbol)) {
                 printBoard();
                 System.out.println(" ** " + currentPlayer + " wins! ** ");
                 break;
             }
 
+            //Checking if its a tie
             if (isBoardFull()) {
                 printBoard();
                 System.out.println(" ** It's a draw! ** ");
@@ -89,6 +95,7 @@ public class TicTacToe {
         }
     }
 
+    //printing the updated board
     static void printBoard() {
         System.out.println();
         System.out.println("Current Board:");
@@ -109,8 +116,10 @@ public class TicTacToe {
         return row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ';
     }
 
+    //Checking all positions
     static boolean checkWinner(char symbol) {
 
+        //checking rows
         for (int i = 0; i < 3; i++) {
             if (board[i][0] == symbol &&
                 board[i][1] == symbol &&
@@ -118,6 +127,7 @@ public class TicTacToe {
                 return true;
         }
 
+        //checking columns
         for (int j = 0; j < 3; j++) {
             if (board[0][j] == symbol &&
                 board[1][j] == symbol &&
@@ -125,11 +135,13 @@ public class TicTacToe {
                 return true;
         }
 
+        //Checking a diagonal
         if (board[0][0] == symbol &&
             board[1][1] == symbol &&
             board[2][2] == symbol)
             return true;
 
+        //Checking an other diagonal
         if (board[0][2] == symbol &&
             board[1][1] == symbol &&
             board[2][0] == symbol)
@@ -149,6 +161,7 @@ public class TicTacToe {
         return true;
     }
 
+    //Asking players if they want to replay
     static boolean askPlayAgain() {
         System.out.print("Play again? (y/n): ");
         char choice = sc.next().charAt(0);
