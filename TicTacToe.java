@@ -34,7 +34,7 @@ public class TicTacToe {
             playAgain = askPlayAgain();
         }
 
-        System.out.println("{{-*- Thanks for playing! -*-}}");
+        System.out.println("{{ -*- Thanks for playing! -*- }}");
     }
 
     static void initializeBoard() {
