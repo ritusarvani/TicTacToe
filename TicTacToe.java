@@ -11,7 +11,9 @@ public class TicTacToe {
     public static void main(String[] args) {
 
         System.out.println("=================================");
-        System.out.println("        TIC TAC TOE GAME          ");
+        System.out.println("==                             ==");
+        System.out.println("==      TIC TAC TOE GAME       ==");
+        System.out.println("==                             ==");
         System.out.println("=================================");
 
         // Take player names
@@ -29,7 +31,7 @@ public class TicTacToe {
             playAgain = askPlayAgain();
         }
 
-        System.out.println("Thanks for playing! 😊");
+        System.out.println("{{-*- Thanks for playing! -*-}}");
     }
 
     static void initializeBoard() {
@@ -66,13 +68,13 @@ public class TicTacToe {
 
             if (checkWinner(currentSymbol)) {
                 printBoard();
-                System.out.println("🎉 " + currentPlayer + " wins!");
+                System.out.println(" ** " + currentPlayer + " wins! ** ");
                 break;
             }
 
             if (isBoardFull()) {
                 printBoard();
-                System.out.println("🤝 It's a draw!");
+                System.out.println(" ** It's a draw! ** ");
                 break;
             }
 
