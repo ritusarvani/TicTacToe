@@ -23,10 +23,10 @@ means row 0, column 1
 
 * How to Run the Program 
 
-1️* Compile the code
+1️* Compile the code --
 javac TicTacToe.java
 
-2️* Run the program
+2️* Run the program --
 java TicTacToe
 
 * Sample Input / Output 
